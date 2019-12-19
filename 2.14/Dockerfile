@@ -3,7 +3,7 @@ FROM coderpatros/geoserver-base:2.14
 USER root
 WORKDIR /tmp
 
-ENV GEOSERVER_DATA_DIR /geoserver-data
+ENV GEOSERVER_DATA_DIR /home/geoserver-data
 ENV GEOWEBCACHE_CACHE_DIR /home/geoserver-gwc
 
 COPY startup-geoserver-azure-web-app.sh /startup-geoserver-azure-web-app.sh
