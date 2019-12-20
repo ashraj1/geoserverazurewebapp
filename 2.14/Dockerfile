@@ -40,6 +40,12 @@ RUN groupadd --gid 999 geoserver \
         unzip \
     && rm -rf /var/lib/apt/lists/*
 
+USER geoserver
+
+EXPOSE 8080
+ENTRYPOINT ["/startup-geoserver-base.sh"]
+
+
 USER root
 WORKDIR /tmp
 
