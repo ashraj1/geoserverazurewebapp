@@ -1,10 +1,10 @@
-FROM coderpatros/geoserver-base:2.14
+FROM wildsong/geoserver:latest
 
 USER root
 WORKDIR /tmp
 
-ENV GEOSERVER_DATA_DIR /geoserver-data
-ENV GEOWEBCACHE_CACHE_DIR /home/geoserver-gwc
+ENV GEOSERVER_DATA_DIR /geoserver
+ENV GEOWEBCACHE_CACHE_DIR /geoserver/gwc
 
 COPY startup-geoserver-azure-web-app.sh /startup-geoserver-azure-web-app.sh
 # sshd_config from https://raw.githubusercontent.com/Azure-App-Service/node/master/8.2.1/sshd_config
