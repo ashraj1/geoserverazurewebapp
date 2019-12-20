@@ -17,8 +17,6 @@ ENV GEOWEBCACHE_CACHE_DIR /home/geoserver-gwc
 
 WORKDIR /tmp
 
-COPY startup-geoserver-base.sh /startup-geoserver-base.sh
-
 RUN groupadd --gid 999 geoserver \
     && useradd --no-create-home --shell /bin/false --uid 999 --gid geoserver geoserver \
     && apt-get update && apt-get install -y \
@@ -47,7 +45,7 @@ WORKDIR /tmp
 
 # sshd_config from https://raw.githubusercontent.com/Azure-App-Service/node/master/8.2.1/sshd_config
 COPY sshd_config /etc/ssh/sshd_config
-
+COPY startup-geoserver-base.sh /startup-geoserver-base.sh
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         openssh-server \
