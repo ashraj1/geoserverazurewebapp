@@ -61,6 +61,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # configure ssh access (don't worry it's via the Azure App Service platform, there's no external access)
     && echo "root:Docker!" | chpasswd \
     && chmod 0555 /startup-geoserver-azure-web-app.sh \
+    && chmod 0555 /startup-geoserver-base.sh \
     && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 2222 8080
