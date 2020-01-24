@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: ashrajgeoserveraz 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ashrajgeoserveraz 
+    spec:
+      containers:
+        - name: ashrajgeoserveraz 
+          image: geoserver1acr.azurecr.io/ashrajgeoserveraz
+          ports:
+          - containerPort: 8080
